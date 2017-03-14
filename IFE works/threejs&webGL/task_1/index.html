@@ -28,6 +28,11 @@
 				//new THREE.PlaneGeometry(2, 4),
 				//new THREE.TorusGeometry(3, 1, 12, 18),
 				//new THREE.SphereGeometry(3, 18, 12),
+		        new THREE.MeshLambertMaterial({
+		            //wireframe: true,
+		            color: 0xff0000,
+		            ambient: 0xffffff
+		        })
 			);
 			scene.add(cube);
 			var torusGeometry1 = new THREE.Mesh(
@@ -47,6 +52,10 @@
 			torusGeometry2.position.set(-5,-5,5);
 			scene.add(torusGeometry1);
 			scene.add(torusGeometry2);
+			var light = new THREE.PointLight(0x6F6F6F, 2, 100);
+			light.position.set(0, 1.5, 2);
+			scene.add(light);
+			renderer.render(scene, camera);
 			
 		</script>
 	</body>
