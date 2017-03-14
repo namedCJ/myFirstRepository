@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*function getNumber(){
+			    return new Promise(function(resolve, reject){
+			        //做一些异步操作
+			        console.log('我在异步操作')
+			        setTimeout(function(){
+			            var num = Math.ceil(Math.random()*10); //生成1-10的随机数
+			            if(num<=5){
+			                resolve(num);
+			            }
+			            else{
+			                reject('数字太大了');
+			            }
+			        }, 1000);
+			    });           
+			}
+		getNumber()
+		.then(
+		    function(data){
+		        console.log('resolved');
+		        console.log(data);
+		        console.log(somedata);
+		    }
+		).catch(function(reason, data){
+			console.log('rejected');
+		    console.log(reason);
+		})*/
+		function test(a,cb){
+			console.log(a)
+			return cb();
+		}
+		test(1,function(){
+			console.log(2)
+		})
+		console.log(3)
+		</script>
+
+	</body>
+</html>
