@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			video{
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="" >
+			<video src=""></video>
+		</div>
+		
+		<script type="text/javascript">
+			navigator.getUserMedia=navigator.getUserMedia||navigator.mozGetUserMedia||
+			navigator.webkitGetUserMedia||navigator.msGetUserMedia
+			if(navigator.getUserMedia){
+				navigator.getUserMedia({
+					video:true,
+					audio:true
+				},function(strem){
+					var video=document.getElementsByTagName("video")[0]
+					video.src=window.URL.createObjectURL(strem)
+					video.autoplay=true;
+					
+				},function(){
+					console.log("fause")
+				})
+			} else{
+				alert("不支持")
+			}
+		</script>
+	</body>
+</html>

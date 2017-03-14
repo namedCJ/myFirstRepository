@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+		#main-div{
+			margin: 50px 35%;
+		}
+		#extracted{
+			border: solid 1px blue;
+			height: 20px;
+			position:relative;
+			margin: 1px 0;
+		}
+		.test-div{
+			border: solid 1px red;
+			height: 40px;
+			margin: 1px 0;
+		}
+	</style>
+</head>
+<body>
+	<script src="js/lib/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<div id="main-div">
+		<div class="test-div">
+			d
+		</div>
+		<div id="extracted" data-effect="shrink" >
+			<button data-role="delete" style="position: relative;left:85%">s</button>
+		</div>
+		<div id="extracted"  data-effect="shrink left" >
+			<button data-role="delete" style="position: relative;left:85%">s</button>
+		</div>
+		<div id="extracted" data-effect="shrink right" >
+			<button data-role="delete" style="position: relative;left:85%">s</button>
+		</div>
+		<div class="test-div">
+			d
+		</div>
+	</div>
+	<script src="js/lib/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="pluginMyself.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var Gplug = new Gplug();
+		Gplug.init();
+	</script>
+<!--	<script type="text/javascript">
+		function pullAway(ele,direction){
+			if (typeof ele!=="object"){
+				console.log("fun pullAway():typeof ele is not element")
+			}
+			if(typeof direction=="string" && direction=="left"){
+				ele.animate({left:'-1000px'}).animate({height:'0px'},function(){
+					$(this).css({display:'none'})
+				});
+			}
+			if(typeof direction=="string" && direction=="right"){
+				ele.animate({left:'1000px'}).animate({height:'0px'},function(){
+					$(this).css({display:'none'})
+				});
+			}
+			
+		}
+		$("[data-role=shrink]").each(function(){
+			$(this).on('click',function(){
+				pullAway($(this),"right");
+			});
+		});
+	</script>-->
+</body>
+</html>

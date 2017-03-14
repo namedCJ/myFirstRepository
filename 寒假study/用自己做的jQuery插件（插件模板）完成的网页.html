@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<div id="test" style="border: solid 2px red;">
+		a1
+	</div>
+	<script src="js/lib/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.pluginTemplet.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*
+		 * 自己做的jQuery插件模板，
+		 * 可以在外部更改插件默认参数设置
+		*/
+		
+		//change default options like this
+		$.fn.pluginName.defaults = {
+		    width:'200px',
+			height:'800px'
+		};
+		
+		//use plugin
+		$('#test').pluginName({
+			//options here
+			width:'800px'
+		});
+		
+	</script>
+</body>
+</html>

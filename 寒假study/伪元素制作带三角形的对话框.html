@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#demo{
+				width:100px;
+				height:100px;
+				position:relative;
+				border:2px solid #000;
+				background-color:#fff;
+			}
+			#demo::before{
+				content: '';
+				position:absolute;
+				width:0;
+				border-left:10px;
+				border-top:10px solid transparent;
+				border-bottom:10px solid transparent;
+				border-left:10px solid black;
+				border-right:10px solid transparent;
+				left: 100px;
+				top: 20px;
+			}
+			#demo::after{
+				content: '';
+				position:absolute;
+				width:0;
+				border-top:8px solid transparent;
+				border-bottom:8px solid transparent;
+				border-left:8px solid white;
+				border-right:8px solid transparent;
+				left: 100px;
+				top: 21.5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="demo"></div>
+
+	</body>
+</html>

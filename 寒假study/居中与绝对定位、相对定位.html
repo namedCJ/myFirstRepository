@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#d1{
+				display: flex; 
+				justify-content: center; 
+				align-items: center;
+				position: relative;
+				margin: 0 auto;
+				border: 2px solid black;
+				width: 800px;
+				height:400px;
+				
+			}
+			#d2{
+				display: flex;
+				justify-content: center; 
+				align-items: center;
+				border: 1px solid red;
+				width: 600px;
+				height:300px;
+				
+				
+			}
+			#d3{
+				border: 1px solid  blueviolet;
+				margin: 0 auto;
+				width: 500px;
+				height:200px;
+				display: flex;
+				justify-content: center; 
+				align-items: center;
+			}
+			.box{
+				border: 1px solid black;
+				width: 150px;
+				height: 150px;
+			}
+			#box1{
+				
+			}
+			#box2{
+				position: absolute;
+				left: 30px;
+				top: 20px;
+				text-align: center;
+				line-height: 150px;
+			}
+			#box3{
+				position: relative;
+				top: 10px;
+				left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+			<div id="d2">
+				<div id="d3">
+					<div id="box1" class="box">我没有被定位，默认为static</div>
+					<div id="box2" class="box">这是绝对定位</div>
+					<div id="box3" class="box">这是相对定位,相对于自己在文档流中的位置的定位</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

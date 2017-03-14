@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		// 我们将“类”的定义包在一个自我执行的函数里，这个函数返回我们所创建的“类”并将其保存在一个变量
+		// 中以便在后面的代码中使用
+		var Accommodation = (function() {
+		// 定义“类”的构造函数。因为处在一个新的函数内，我们也切换到了一个新的作用域中，所以可以使用与
+		// 保存函数返回值的那个变量相同的名字
+		Accommodation=Accommodation||function(){};
+		// 此处定义的所有变量都是“私有的”，这些变量在当前作用域之外不可用。可以通过给变量名添加下划线
+		// 前缀来标识这一点
+		var _isLocked = false,
+		_isAlarmed = false,
+		_alarmMessage = "Alarm activated!";
+		// 仅在当前作用域中定义的函数（而未在构造函数的原型上定义）也都是“私有的”
+		function _alarm() {
+		_isAlarmed = true;
+		alert(_alarmMessage);
+		}
+		function _disableAlarm() {
+		_isAlarmed = false;
+		}
+		// 所有定义在原型上的方法都是“公有的”，当我们在此处创建的“类”在闭包结束处被返回后，就可以在
+		// 当前作用域之外访问这些方法了
+		Accommodation.prototype.lock = function() {
+		_isLocked = true;
+		_alarm();
+		};
+		Accommodation.prototype.unlock = function() {
+		_isLocked = false;
+		_disableAlarm();
+		};
+		// 定义一个getter函数来对私有变量_isLocked的值进行只读访问——相当于把该变量定义为了“受保护的”
+		Accommodation.prototype.getIsLocked = function() {
+		return _isLocked;
+		};
+		// 定义一个setter函数来对私有变量_alarmMessage进行只写访问——相当于将其定义为了“受保护的”
+		Accommodation.prototype.setAlarmMessage = function(message) {
+		_alarmMessage = message;
+		};
+		// 返回在这个作用域中创建的“类”，使之在外层作用域中即后面代码的所有位置都可用。只有公有的属性和
+		// 方法是可用的
+		return Accommodation;
+	}(Accommodation,undefined));
+	// 创建一个对象实例
+	var house = new Accommodation();
+	house.lock() // 弹出警告消息“Alarm activated”
+	house._alarm(); // 错误！_alarm函数从未被公开暴露，所以无法直接通过“类”的对象实例进行访问
+	alert(house._isLocked); // undefined（_isLocked是私有的，在闭包外部访问不到）
+	house.getIsLocked();// true（返回_isLocked的值，但不允许对其进行直接访问，所以该变量是只读的）
+	house.setAlarmMessage("The alarm is now activated!");
+	house.lock();// 弹出警告消息“The alarm is now activated”	
+	</script>
+</html>

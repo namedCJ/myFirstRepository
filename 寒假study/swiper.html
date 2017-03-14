@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/lib/swiper.css"/>
+		<style type="text/css">
+			.swiper-container{
+				width: 600px;
+    			height: 300px;
+			}
+			.swiper-slide {
+		        text-align: center;
+		        font-size: 18px;
+		        background: #fff;
+		        
+		        /* Center slide text vertically */
+		        display: -webkit-box;
+		        display: -ms-flexbox;
+		        display: -webkit-flex;
+		        display: flex;
+		        -webkit-box-pack: center;
+		        -ms-flex-pack: center;
+		        -webkit-justify-content: center;
+		        justify-content: center;
+		        -webkit-box-align: center;
+		        -ms-flex-align: center;
+		        -webkit-align-items: center;
+		        align-items: center;
+		    }
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">Slide 1</div>
+		        <div class="swiper-slide">Slide 2</div>
+		        <div class="swiper-slide">Slide 3</div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		    
+		    <!-- 如果需要导航按钮 -->
+		    <div class="swiper-button-prev"></div>
+		    <div class="swiper-button-next"></div>
+		    
+		    <!-- 如果需要滚动条 -->
+		    <div class="swiper-scrollbar"></div>
+		</div>
+		<script src="js/lib/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lib/swiper.jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var mySwiper = new Swiper ('.swiper-container', {
+			    //direction: 'vertical',
+			    loop: true,
+			    
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			    
+			    // 如果需要前进后退按钮
+			    nextButton: '.swiper-button-next',
+			    prevButton: '.swiper-button-prev',
+			    
+			    // 如果需要滚动条
+			    scrollbar: '.swiper-scrollbar',
+			}) 
+		</script>
+	</body>
+</html>

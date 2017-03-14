@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				border: 1px solid red;
+				width: 200px;
+				height: 200px;
+			}
+			.box1{
+				border: 1px solid red;
+				height: 200px;
+				width: 300px;;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<input type="button" name="btn" id="btn" value="添加class" />
+		<input type="button" name="btn" id="btn-delete" value="删除class" />
+		<script src="js/lib/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="pluginMyself.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*var b=document.getElementsByClassName('box')[0];
+			var a=document.defaultView.getComputedStyle(b,null)
+			for(let i in a){
+				console.log(i+':'+a[i])
+			}
+			var getCss = function(o,key){
+		        return o.currentStyle? o.currentStyle[key] : document.defaultView.getComputedStyle(o,false)[key];   
+		    }; */
+		    var cj=new Gplug();
+		    document.getElementById('btn').addEventListener('click',function(){
+		    	cj.addTClass(document.getElementsByClassName('box')[0],'box1')
+		    });
+		    document.getElementById('btn-delete').addEventListener('click',function(){
+		    	cj.removeTClass(document.getElementsByClassName('box')[0],'box1')
+		    })
+		</script>
+	</body>
+</html>
