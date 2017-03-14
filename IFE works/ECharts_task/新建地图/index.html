@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<div id="container">
+			<div id="work-wrapper">
+				<div id="map"></div>
+			</div>
+		</div>
+		<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+		<script src="//cdn.bootcss.com/echarts/3.4.0/echarts.js"></script>
+		<script src="js/新建区.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+	        var myChart = echarts.init(document.getElementById('map'));
+	        myChart.setOption({
+	            series: [{
+	            	roam:true,
+	                type: 'map',
+	                map: 'xinjian'
+	            }]
+	        });
+		</script>
+	</body>
+</html>

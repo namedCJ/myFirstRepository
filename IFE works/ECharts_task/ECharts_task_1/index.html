@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<div id="container">
+			<div id="work-wrapper">
+				<div id="bar"></div>
+				<div class="divider"></div>
+				<div id="line"></div>
+			</div>
+		</div>
+		 <div id="main" style="width: 600px;height:400px;"></div>
+		<!--<script src="js/lib/echarts.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="//cdn.bootcss.com/echarts/3.4.0/echarts.common.js"></script>
+		<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+        var myChartBar = echarts.init(document.getElementById('bar'));
+		var myChartLine = echarts.init(document.getElementById('line'));
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 柱状图'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+        // 使用刚指定的配置项和数据显示柱状图。
+        myChartBar.setOption(option);
+        //将option中的type换成line
+        option.title.text='折线图';
+        option.series[0].type='line';
+        // 使用更改后的option配置显示折线图。
+        myChartLine.setOption(option);
+		</script>
+	</body>
+</html>

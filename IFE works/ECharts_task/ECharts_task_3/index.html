@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<div id="container">
+			<div id="work-wrapper">
+				<div id="map"></div>
+			</div>
+		</div>
+		<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+		<script src="//cdn.bootcss.com/echarts/3.4.0/echarts.js"></script>
+		<script type="text/javascript">
+		$.get('map/json/world.json', function (data) {
+	        echarts.registerMap('world', data);
+	        var myChart = echarts.init(document.getElementById('map'));
+	        myChart.setOption({
+	            series: [{
+	            	roam:true,
+	                type: 'map',
+	                map: 'world'
+	            }]
+	        });
+	    });
+		</script>
+	</body>
+</html>

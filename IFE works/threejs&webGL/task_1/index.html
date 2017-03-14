@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<div id="container">
+			<div id="work-wrapper">
+				<canvas id="mainCanvas" width="400px" height="300px" ></canvas>
+			</div>
+		</div>
+		
+		<script src="//cdn.bootcss.com/three.js/r83/three.min.js"></script>
+		<script type="text/javascript">
+			var renderer = new THREE.WebGLRenderer({
+			    canvas: document.getElementById('mainCanvas')
+			});
+			var scene = new THREE.Scene();
+			var camera = new THREE.OrthographicCamera(-20, 20, 15, -15, 1, 1000);
+			//var camera = new THREE.PerspectiveCamera(45, 4 / 3, 1, 10);
+			camera.position.set(10, 10, 10);
+			camera.lookAt(new THREE.Vector3(0, 0, 0));
+			scene.add(camera);
+			var cube = new THREE.Mesh(
+				new THREE.CubeGeometry(20, 10, 10,10,10,10),
+				//new THREE.PlaneGeometry(2, 4),
+				//new THREE.TorusGeometry(3, 1, 12, 18),
+				//new THREE.SphereGeometry(3, 18, 12),
+		        new THREE.MeshLambertMaterial({
+		            //wireframe: true,
+		            color: 0xff0000,
+		            ambient: 0xffffff
+		        })
+			);
+			scene.add(cube);
+			var torusGeometry1 = new THREE.Mesh(
+				new THREE.TorusGeometry(2, 0.5, 12, 18),
+		        new THREE.MeshLambertMaterial({
+		            color: 0xff0000,
+		            //wireframe: true
+		        })
+			);
+			var torusGeometry2 = new THREE.Mesh(
+				new THREE.TorusGeometry(2, 0.5, 12, 18),
+		        new THREE.MeshLambertMaterial({
+		            color: 0xff0000,
+		        })
+			);
+			torusGeometry1.position.set(5,-5,5);
+			torusGeometry2.position.set(-5,-5,5);
+			scene.add(torusGeometry1);
+			scene.add(torusGeometry2);
+			var light = new THREE.PointLight(0x6F6F6F, 2, 100);
+			light.position.set(0, 1.5, 2);
+			scene.add(light);
+			renderer.render(scene, camera);
+			
+		</script>
+	</body>
+</html>

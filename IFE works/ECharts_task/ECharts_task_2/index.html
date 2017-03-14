@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<div id="container">
+			<div id="work-wrapper">
+				<div id="bar"></div>
+<!--				<div class="divider"></div>
+				<div id="line"></div>-->
+			</div>
+		</div>
+		<script src="../ECharts_task_3/js/lib/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('bar'));
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 自定义柱状图',
+                subtext:'副标题',
+                textStyle:{
+                	color:'red'
+                },
+                backgroundColor:'black'
+            },
+            tooltip: {},
+            color:['gray','blue'],
+            legend: {
+                data:['销量','销量-折线图'] 
+            },
+            xAxis: {
+                data: [{
+				    value: '衬衫',
+				    textStyle: {
+				        fontSize: 20,
+				        color: 'red'
+				    }
+				},"羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
+                gridIndex:0,
+                position:'bootom',
+                type:'category',
+                name:'品种',
+                nameLocation:'start',
+                nameRotate:-30,
+                nameGap:30
+            },
+            yAxis: {
+                position:'right',
+                name:'销量',
+                nameLocation:'end',
+                nameRotate:30,
+                nameGap:20
+            },
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            },
+            {
+                name: '销量-折线图',
+                type: 'line',
+                data: [5, 20, 36, 10, 10, 20]}
+            ]
+        };
+        // 使用刚指定的配置项和数据显示柱状图。
+        myChart.setOption(option);
+		</script>
+	</body>
+</html>

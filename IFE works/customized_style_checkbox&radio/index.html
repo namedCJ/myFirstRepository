@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#container{
+				background-color: #292929;
+				margin: 0 auto;
+				width: 100%;
+				height: 670px;
+				display: flex;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				justify-content: center;
+				align-items: center;
+			}
+				#work-wrapper{
+					background-color: white;
+					margin: 0 auto;
+					width: 50%;
+					height: 50%;
+					display: flex;
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					flex-direction: column;
+					-webkit-flex-direction: column;
+					-ms-flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+				#work-wrapper input[type="checkbox"],input[type="radio"]{
+					display: none;
+				}
+				.works{
+					margin: 0 auto;
+					text-align: center;
+				}
+				.radio-wrapper,.checkbox-wrapper{
+					display: flex;
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					justify-content: center;
+				}
+					#pseudo-work input[type="radio"]+label{
+						border: 1px solid #d9d9d9;
+						border-radius: 50%;
+						display: inline-block;
+						width: 14px;
+						height: 14px;
+						margin: 0 5px;
+					}
+					#pseudo-work input[type="radio"]:checked+label{
+						/*利用ps得知原图中radius的颜色号为#d73e33*/
+						border: 1px solid #d73e33;
+						border-radius: 50%;
+						display: inline-block;
+						width: 14px;
+						height: 14px;
+						position: relative; 
+					}
+					#pseudo-work input[type="radio"]:checked+label::after{
+						background-color: #d73e33;
+						position: absolute; 			
+						width: 42.857%;
+		  				height: 42.857%;
+		  				top: 32%;
+		  				left: 32%;
+						content: ""; 
+						border-radius: 50%;
+					}
+					#pseudo-work input[type="checkbox"]+label{
+						border: 1px solid #d9d9d9;
+						display: inline-block;
+						width: 12px;
+						height: 12px;
+						margin: 0 6px;
+					}
+					#pseudo-work input[type="checkbox"]:checked+label{
+						border: 1px solid #d73d32;
+						display: inline-block;
+						width: 12px;
+						height: 12px;
+						position: relative;
+					}
+					#pseudo-work input[type="checkbox"]:checked+label::after{
+						position: absolute; 
+						border-left: 2px solid #d73d32;
+						border-bottom: 2px solid #d73d32;
+						content: "";
+						display: block;
+						width: 6px;
+		  				height: 3px;
+		  				top: 25%;
+		  				left: 24.5%;						
+						transform: rotate(-45deg);
+					}
+				.radio-wrapper-img{
+					display: flex;
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					display: -ms-flexbox;
+					justify-content: center;
+				}
+					.radio-wrapper-img input[type=radio]+label{
+						display: inline-block;
+					    width: 16px;
+					    height: 16px;
+					    background-image: url(http://p1.bqimg.com/567571/99322cf8c3283e42.png);
+					    background-position: 29% 29%; 
+					    margin: 0 5px;
+					}
+					.radio-wrapper-img input[type=radio]:checked+label{
+					    background-position: 70% 29%; 
+					}
+				.checkbox-wrapper-img{
+					display: flex;
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					display: -ms-flexbox;
+					justify-content: center;
+				}
+					.checkbox-wrapper-img input[type=checkbox]+label{
+						display: inline-block;
+					    width: 16px;
+					    height: 16px;
+					    background-image: url(http://p1.bqimg.com/567571/99322cf8c3283e42.png);
+					    background-position: 29% 93%; 
+					    margin: 0 5px;
+					}
+					.checkbox-wrapper-img input[type=checkbox]:checked+label{
+						background-position: 70% 93%; 
+					}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="work-wrapper">
+				<div id="pseudo-work" class="works">
+					<div id="pseudo-work-head">
+						<h3>利用伪元素实现</h3>
+					</div>
+					<div class="radio-wrapper">
+						<input type="radio" name="radio-group" id="radio-1" value=""/><label id="label-pseudo-radius-1" for="radio-1"></label><br />
+						<input type="radio" name="radio-group" id="radio-2" value=""/><label id="label-pseudo-radius-2" for="radio-2"></label><br />
+						<input type="radio" name="radio-group" id="radio-3" value=""/><label id="label-pseudo-radius-3" for="radio-3"></label><br />
+					</div>
+					<div class="checkbox-wrapper">
+						<input type="checkbox" id="work-checkbox-1" value=""/><label id="label-pseudo-checkbox-1" for="work-checkbox-1"></label><br />
+						<input type="checkbox" id="work-checkbox-2" value=""/><label id="label-pseudo-checkbox-2" for="work-checkbox-2"></label>
+						<input type="checkbox" id="work-checkbox-3" value=""/><label id="label-pseudo-checkbox-3" for="work-checkbox-3"></label>
+					</div>		
+				</div>
+				<div id="bg-position-work" class="works">
+					<div id="bg-position-work-head">
+						<h3>利用背景图实现</h3>
+					</div>
+					<div class="radio-wrapper-img">
+						<input type="radio" name="radio-img" id="radio-img-1" value=""/><label for="radio-img-1"></label>
+						<input type="radio" name="radio-img" id="radio-img-2" value=""/><label for="radio-img-2"></label>
+						<input type="radio" name="radio-img" id="radio-img-3" value=""/><label for="radio-img-3"></label>
+					</div>
+					<div class="checkbox-wrapper-img">
+						<input type="checkbox" id="checkbox-img-1" value=""/><label for="checkbox-img-1"></label>
+						<input type="checkbox" id="checkbox-img-2" value=""/><label for="checkbox-img-2"></label>
+						<input type="checkbox" id="checkbox-img-3" value=""/><label for="checkbox-img-3"></label>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
