@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>我的文件</title>
+	<link rel="stylesheet" type="text/css" href="css/fileinput.css"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>	
+</head>
+<body>
+
+<div class="alert alert-success alert-dismissable" role="alert" style="display: none;position: fixed;width: 100%;z-index: 99999;" ><button class="close" type="button" data-dismiss="alert">&times;</button></div>
+<div class="alert alert-warning" role="alert" style="display: none;position: fixed;width: 100%;z-index: 99999;"></div>
+<div class="alert alert-danger" role="alert" style="display: none;position: fixed;width: 100%;z-index: 99999;"></div>
+<!-- [重命名]模态弹出窗内容 -->
+<div class="modal fade" id="modalWinRename" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">重命名</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<input type="text" id="rename" class="form-control" value="">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="modal-esc" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" id="modal-confirm-renname" class="btn btn-primary" >确定</button>
+			</div>
+		</div>
+	</div>
+</div><!-- [重命名]模态框结束 -->
+
+<!-- [新建文件夹]模态弹出窗内容 -->
+<div class="modal fade" id="modalWin1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">新建文件夹</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<input type="text" id="give-name" class="form-control" value="新建文件夹">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="modal-esc" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" id="modal-confirm" class="btn btn-primary" >确定</button>
+			</div>
+		</div>
+	</div>
+</div><!-- [新建文件夹]模态框结束 -->
+
+
+
+
+	
+	<div id="container" class="container">
+		<ul id="bread" class="breadcrumb bread">
+  			<!--<li class="li" data-id=0 data-name="根目录" >根目录</li>-->
+		</ul> 
+		<div class="btnGroup">
+			<input data-toggle="modal" data-target="#modalWin3" data-backdrop="static" id="upload" class="btn btn-primary" type="button" value="上传" />
+			<input data-toggle="modal" data-target="#modalWin1"  id="newFolder" class="btn btn-primary" type="button" name=""  value="新建文件夹" />
+			<input id="back" class="btn btn-primary" type="button" name="back"  value="返回上一级" />
+		</div>
+		<div id="main-content" class="list" >
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+<!-- [上传文件]模态弹出窗内容 -->
+<div class="modal fade" id="modalWin3" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">上传文件</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<input type="file" id="upload-file" name="uploadFiles" multiple />
+				</div>
+			</div>
+			<div class="modal-footer">
+			</div>
+		</div>
+	</div>
+</div><!-- [上传文件]模态框结束 -->		
+	
+<!-- [删除文件夹]模态弹出窗内容 -->
+<div class="modal fade" id="modalWin2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">删除文件</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<p>您确定要删除此文件吗？</p>
+					</-->
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" id="delate-modal-confirm" class="btn btn-primary" >确定</button>
+			</div>
+		</div>
+	</div>
+</div><!-- [删除文件夹]模态框结束 -->	
+	
+	
+
+<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="js/bootstrap-3.2.0.min.js"></script>
+<script src="js/bootstrap-fileinput.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/zh.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/mainJquery.js" ></script>
+</body>
+</html>

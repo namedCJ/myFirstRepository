@@ -1,0 +1,79 @@
+.bread{
+	margin-right: 35%;
+}
+.btnGroup{
+	position: relative;
+	margin-right: 35%;
+}
+.li{
+	color: #31B0D5;
+	display: block;
+}
+.li:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+#back{
+	float: right;
+}
+#upload{
+	margin-right: 30px;
+	
+}
+#main-content{
+	margin-right: 35%;
+	margin-top: 11px;
+	padding-top:5px ;
+	padding-bottom: 5px;
+	border: 1px solid #ccc;
+	height: 400px;
+}
+#main-content a{
+	display: block;
+}
+#main-content a:hover{
+	cursor: pointer;
+}
+#main-content span{
+	float: left;
+}
+.file-row{
+	padding-left: 8px;
+	padding-top: 0px;
+	text-align: center;
+	line-height: 45px;
+}
+.file-row span{
+	margin-right: 10px;
+	
+}
+.link{
+	font-size: 18px;
+	float: left;
+	margin-left: 4px;
+}
+#rowBtn{
+	margin-left: 20%;
+	visibility: hidden;
+	opacity: 0;
+	-o-transition:all .5s ease-in-out 0s;
+	-webkit-transition:all .5s ease-in-out 0s;
+	-moz-transition:all .5s ease-in-out 0s ;
+	transition:all .5s ease-in-out 0s;
+}
+.file-row:hover{
+	background-color: #A6E1EC;
+}
+.file-row:hover>#rowBtn{
+	
+	visibility: visible;
+	opacity: 1;
+}
+#rowBtn li{
+	margin: 0 10px 0 10px;
+	list-style: none;
+}
+hr{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
