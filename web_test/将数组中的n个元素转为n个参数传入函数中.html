@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		
+	</div>
+</body>
+<script type="text/javascript">  
+function query(){
+    for(var k in arguments){
+        console.log('第'+k+'个参数:')
+        console.log(arguments[k])
+    }
+}
+var args=['a',5,[0,1],{name:'陈剑',sex:'male'}];//该数组有不定数量的元素，元素可能是方法、字符串等等
+query.apply(null,args)
+
+</script>
+</html>

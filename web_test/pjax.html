@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>My Site</h1>
+    	<div class="container" id="container"> Go to <a href=javascript:void(0)>next page</a>. </div>
+	</body>
+	<script src="js/AMD_JS/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jQ.pjax.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('#container a').on('click',function(){
+			if(window.history.pushState){
+				history.pushState({},'','test.html')
+				document.write(location.href.split('/')[location.href.split('/').length-1])
+			} 
+		});
+		window.onpopstate=function(){
+			alert('s')
+		}
+	</script>
+</html>

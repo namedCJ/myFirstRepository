@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#unchangeable{
+				border: solid 2px black;
+			}
+			#changeable{
+				border: solid 2px red;
+			}
+		</style>
+	</head>
+	<body>
+    	<div id="unchangeable"><b>网址改变的时候这一块是不会刷新的</b><br/></div>
+    	<div id="changeable"><b>网址改变的时候这一块会改变</b><br/></div>
+	</body>
+	<script src="js/AMD_JS/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jQ.pjax.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('#unchangeable').on('click','a',clickFn)
+		var list=['list1','list2','list3','list4','list5',];
+		for(var i=0;i<list.length;i++){
+			$('#unchangeable').append('<a >'+ list[i]+'</a>'+'<br/>')
+		}
+		function clickFn(){
+			var text=$(this).text();
+			location.hash=text;
+			var hash=location.hash || null
+			$('#changeable').html('<b>网址改变的时候这一块会改变</b><br/>'+'现在是'+hash);
+			
+		}
+		var hash=location.hash || null
+		if(hash){
+				$('#changeable').html('<b>网址改变的时候这一块会改变</b><br/>'+'现在是'+hash);
+		}
+			
+	</script>
+</html>

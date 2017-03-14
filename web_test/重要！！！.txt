@@ -1,0 +1,4 @@
+	直接在html中用onclick="fun()"调用函数的话，
+fun()中的this指向的就是全局window对象；
+而如果在js中用addEventListener（或用js中的onclick=""或用jQuery中的on）给一个元素添加函数的话，
+fun()中的this指向的对象是绑定该事件的元素

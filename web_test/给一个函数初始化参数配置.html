@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">  
+
+//初始化参数设置
+initArgs({
+	language:"Chinese",
+	showInfo:true,
+	information:"这是显示的信息"
+});
+
+
+function initArgs(obj){
+	language=obj.language||'English'
+	uploadUrl=obj.uploadUrl||'https://www.baidu.com/'
+	showName=obj.showName||true
+	showInfo=obj.showInfo||true
+	info=obj.information||''
+	mainFun();
+	console.log(info)
+}
+function mainFun(){
+	//somecode
+}
+</script>
+</html>

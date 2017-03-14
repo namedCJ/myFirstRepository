@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<img id="cj" src="" alt="" title="cjPic" />
+	<input type="button" value="loadImage" onclick="loadImage('img/0.jpg',imgLoaded)"/>
+	<script type="text/javascript">
+		function loadImage(url, callback) {
+			var img = document.getElementById("cj");
+			img.src = url;
+			if (img.complete) { // 如果图片已经存在于浏览器缓存，直接调用回调函数
+				console.log('已经被缓存过了'); 
+			}
+			else{
+				img.onload = function () { //图片下载完毕时异步调用callback函数。
+					img.onload = null;  
+					callback.call(img);//将回调函数的this替换为Image对象
+				}
+				
+			};
+		}
+		function imgLoaded(){
+			console.log(this.width);
+		}
+	</script>
+</body>
+</html>

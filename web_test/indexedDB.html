@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		function openDB (name,version) {
+            var version=version || 1;
+            var request=window.indexedDB.open(name,version);
+            request.onerror=function(e){
+                console.log(e.currentTarget.error.message);
+            };
+            request.onsuccess=function(e){
+                myDB.db=e.target.result;
+            };
+            request.onupgradeneeded=function(e){
+                var db=e.target.result;
+                if(!db.objectStoreNames.contains('students')){
+                    db.createObjectStore('students',{keyPath:"id"});
+                }
+                console.log('DB version changed to '+version);
+            };
+        }
+
+        function addData(db,storeName){
+            var transaction=db.transaction([storeName],'readwrite'); 
+            var store=transaction.objectStore(storeName); 
+
+            for(var i=0;i<students.length;i++){
+                store.add(students[i]);
+            }
+        }
+
+		var students=[{ 
+            id:1001, 
+            name:"Byron", 
+            age:24 
+        },{ 
+            id:1002, 
+            name:"Frank", 
+            age:30 
+        },{ 
+            id:1003, 
+            name:"Aaron", 
+            age:26 
+        }];
+		var myDB={
+            name:'test',
+            version:7,
+            db:null
+        };
+		openDB(myDB.name,myDB.version);
+        setTimeout(function(){
+            addData(myDB.db,'students');
+        },1000);
+	</script>
+</html>

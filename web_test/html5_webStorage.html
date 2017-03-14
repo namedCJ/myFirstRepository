@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>html5_webStorage</title>
+</head>
+<body>
+	<div id="show">
+		
+	</div>
+<!--	<script type="text/javascript">
+	if(localStorage.getItem('visitTime')){
+		var visitTime=localStorage.getItem('visitTime')
+		visitTime=parseInt(visitTime)+1;
+		localStorage.setItem('visitTime',visitTime)
+	}
+	else{
+		localStorage.setItem('visitTime',1)
+	}
+	alert(localStorage.getItem('visitTime'))
+	</script>-->
+	<script type="text/javascript">
+/*		localStorage.a='dd';
+		localStorage.b=3;*/
+		for(var i=0;i<localStorage.length;i++){
+			console.log(localStorage.key(i)+'='+localStorage[localStorage.key(i)])
+		}
+
+	</script>
+</body>
+</html>

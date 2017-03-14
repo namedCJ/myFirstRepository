@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>立即执行函数来封装模块</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+var stu=(function (name,stuNum,stuClass){
+	//私有属性
+	var _height='183cm';
+	var _weight='92.5kg';
+	//私有方法
+	var _fn1=function(){
+		
+	}
+	var _fn2=function(){
+		
+	}
+	//公有属性
+	var name=(typeof name)=='string' ? name:name.toString();
+	/*var name=name;
+	console.log(typeof name)*/
+	var stuNum=stuNum;
+	var stuClass=stuClass
+	//公有方法
+	var showName=function(){
+		console.log(name)
+	}
+	return {
+		//返回公有属性
+		name:name,
+		stuNum:stuNum,
+		stuClass:stuClass,
+		//返回公有方法
+		showName:showName
+	};
+})('cj',5404314028,'工业工程141');
+var stu=(function(argStu){
+	//给stu增添一些属性或者方法
+	argStu.hover='球类运动';
+	argStu.showHover=function(){
+		console.log(argStu.name+'喜欢'+argStu.hover)
+	}
+	return argStu;
+})(stu)
+console.log(stu.stuNum)
+stu.showName();
+stu.showHover();
+</script>
+</html>
