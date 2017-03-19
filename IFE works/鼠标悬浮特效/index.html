@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<style type="text/css">
+			.card-group{
+				display: flex;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				width: 80%;
+				height: 80%;
+			}
+				.card{
+					margin: 10px 10px;
+					width: 300px;
+					height: 200px;
+					display: flex;
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					justify-content: center;
+					align-items: center;
+					position: relative;
+				}			
+					.card-bg{
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						background-repeat:no-repeat;
+						background-position:center;
+						background-size: 100% 100%;
+						background-image: url(img/beer.jpg);
+						transition: all 1s;
+						-moz-transition: all 1s;
+						-moz-transition: all 1s;
+					}
+					.masked{
+						width: 95%;
+						height: 90%;
+						display: flex;
+						display: -webkit-flex;
+						display: -ms-flexbox;
+						flex-direction: column;
+						-webkit-flex-direction: column;
+						-ms-flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						opacity: 0;
+						position: relative;
+						transition: all 1s;
+						-moz-transition: all 1s;
+						-moz-transition: all 1s;
+						/*流光文字效果*/
+				        background-image: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+				        -webkit-text-fill-color: transparent;
+				        -webkit-background-clip: text;
+				        background-size: 200% 100%;
+				        -webkit-animation: masked-animation 4s infinite linear;				        				        
+				        font-size: 20px;
+				    }
+					    .masked .top,.masked .bottom{
+							position: absolute;
+							width: 0%;
+							height: 3%;
+							background-color:  beige;
+							transition: all 1s;
+							-moz-transition: all 1s;
+							-moz-transition: all 1s;
+						}
+						.masked .top{
+							top: 0;
+						}
+						.masked .bottom{
+							bottom: 0;
+						}
+						.masked .left,.masked .right{
+							width: 1%;
+							height: 0%;
+							background-color: beige;
+							position: absolute;
+							transition: all 1s;
+							-moz-transition: all 1s;
+							-moz-transition: all 1s;
+						}
+						.masked .left{
+							left: 0;
+						}
+						.masked .right{
+							right: 0;
+						}
+						.masked h4{
+							transition: all 1s;
+							-moz-transition: all 1s;
+							-moz-transition: all 1s;
+							margin-top: 20px;
+						}
+						.masked h5{
+							margin-top: 10px;
+						}
+			
+			.card:hover{
+				cursor: pointer;
+			}			
+		    .card:hover .card-bg{
+		    	filter: blur(5px);
+				-moz-filter: blur(5px);
+				-o-filter: blur(5px);
+				-ms-filter: blur(5px);
+		    }
+		    .card:hover .masked{
+		    	opacity: 1;
+		    	
+		    }
+		    .card:hover .masked .top,.card:hover .masked .bottom{
+		    	width: 100%;
+		    }
+		    .card:hover .masked .left,.card:hover .masked .right{
+		    	height: 100%;
+		    }
+		    .card:hover .masked h4{
+		    	margin-top: 0px;
+		    }
+		    @-webkit-keyframes masked-animation {
+			    0%  { background-position: 0 0;}
+			    100% { background-position: -100% 0;}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="work-wrapper">
+				<div class="card-group">
+					<div class="card">
+						<div class="card-bg"></div>
+						<div class="masked">
+							<div class="top"></div>
+							<div class="right"></div>
+							<div class="bottom"></div>
+							<div class="left"></div>
+						    <h4>欢迎参加百度前端技术学院</h4>
+						    <h5>点击报名</h5>
+						</div>	
+					</div>
+					<div class="card">
+						<div class="card-bg"></div>
+						<div class="masked">
+							<div class="top"></div>
+							<div class="right"></div>
+							<div class="bottom"></div>
+							<div class="left"></div>
+						    <h4>欢迎参加百度前端技术学院</h4>
+						    <h5>点击报名</h5>
+						</div>	
+					</div>
+					<div class="card">
+						<div class="card-bg"></div>
+						<div class="masked">
+							<div class="top"></div>
+							<div class="right"></div>
+							<div class="bottom"></div>
+							<div class="left"></div>
+						    <h4>欢迎参加百度前端技术学院</h4>
+						    <h5>点击报名</h5>
+						</div>	
+					</div>
+					<div class="card">
+						<div class="card-bg"></div>
+						<div class="masked">
+							<div class="top"></div>
+							<div class="right"></div>
+							<div class="bottom"></div>
+							<div class="left"></div>
+						    <h4>欢迎参加百度前端技术学院</h4>
+						    <h5>点击报名</h5>
+						</div>	
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+	</body>
+</html>
