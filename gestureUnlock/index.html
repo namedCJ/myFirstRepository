@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<div id="container">
+			<div id="banner">
+				<h3>手势密码</h3>
+			</div>
+			<div id="wrapper">
+				<div id="main">
+					<div class="grid-row">
+						<span class="grid">
+							<div class="circle">
+								<div class="circle-center"></div>
+							</div>
+						</span>
+						<span class="grid">
+							<div class="circle"></div>
+						</span>
+						<span class="grid">
+							<div class="circle"></div>
+						</span>
+					</div>
+					<div class="grid-row">
+						<span class="grid">
+							<div class="circle"></div>
+						</span>
+						<span class="grid">
+							<div class="circle"></div>
+						</span>
+						<span class="grid">
+							<div class="circle"></div>
+						</span>
+					</div>
+					<div class="grid-row">
+						<span class="grid">
+							<div class="circle"></div>
+						</span>
+						<span class="grid">
+							<div class="circle"></div>
+						</span>
+						<span class="grid">
+							<div class="circle"></div>
+						</span>
+					</div>
+				</div>
+				<div id="info"><h4>&nbsp;</h4></div>
+			</div>
+			<div id="radio-group">
+				<ul>
+					<li><input checked="checked" type="radio" name="radio" id="set-password" value="设置密码"/><label for="set-password">设置密码</label></li>
+					<li><input type="radio" name="radio" id="verify-password" value="验证密码"/><label for="verify-password">验证密码</label></li>
+				</ul>									
+			</div>
+		</div>
+		<!--引入安全哈希算法加密密码-->
+		<script src="js/encode/sha1.js" type="text/javascript" charset="utf-8"></script> 
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload=function(){
+				if(window.innerWidth>768){
+					alert('请用移动设备查看');
+					document.body.innerHTML='';
+				}				
+			}
+		</script>
+	</body>
+</html>
