@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<title>punched</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#container{
+			background-color: #292929;
+			margin: 0 auto;
+			width: 100%;
+			height: 670px;
+			display: flex;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			justify-content: center;
+			align-items: center;
+		}
+			#work-wrapper{
+				background-color: white;
+				margin: 0 auto;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				flex-direction: column;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				overflow: auto;
+			}
+				#mainCanvas{
+					width: 100%;
+					height: 100%;
+				}
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	<div id="container">
+		<div id="work-wrapper">
+			<canvas id="mainCanvas" >You are an outdated man</canvas>
+			<canvas id="mainCanvas" >You are an outdated man</canvas>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//dom构建结束后要干的事
+		let windowWidth = document.documentElement.clientWidth
+		let windowHeight = document.documentElement.clientHeight
+		let container=document.getElementById("container")
+		let canvas=document.getElementById("mainCanvas")
+		//将container的宽高设置成设备宽高
+		container.style.width=windowWidth+"px"
+		container.style.height=windowHeight+"px"
+		//将canvas的宽高设置成设备宽高
+		canvas.width=windowWidth
+		canvas.height=windowHeight
+		console.log(canvas.width, canvas.height)
+		console.log("window size:\nwidth:"+ canvas.width+"px  height: "+canvas.height+"px")
+		
+		//窗口发生变化时要干的事
+		window.onresize = () =>{
+			let windowWidth = document.documentElement.clientWidth
+			let windowHeight = document.documentElement.clientHeight
+			let canvas=document.getElementById("mainCanvas")
+			//将container的宽高设置成设备宽高
+			container.style.width=windowWidth+"px"
+			container.style.height=windowHeight+"px"
+			//将canvas的宽高设置成设备宽高
+			canvas.width=windowWidth
+			canvas.height=windowHeight
+			console.log("you have resize window to:\nwidth:" +canvas.width+"px  height: "+canvas.height+"px")
+		}
+	</script>
+	<script src="js/modules/index.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

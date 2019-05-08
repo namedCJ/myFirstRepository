@@ -1,0 +1,41 @@
+//旋转动画物体的构造函数
+function objDrawn(){
+	let _self=this;
+	this.circle={
+			"center":[0,0],
+			"radius":60,
+			"color":"white",
+			"borderColor":"black",
+			"borderWidth":1
+	};
+	this.needles=[{
+			"line":{
+				"length":80,
+				"position":[[0,_self.circle.radius],[0,_self.circle.radius+80]],
+				"color":"black",
+				"width":2
+			},
+			"needleCircle":{
+				"center":[0,_self.circle.radius+80],
+				"radius":10,
+				"color":"white",
+				"borderColor":"black",
+				"borderWidth":1
+			}
+		}];
+}
+//针的构造函数
+function needleConstr(length,color){
+	this.line={
+		"length":length,
+		"color":color,
+		"width":2
+	};
+	this.needleCircle={
+		"center":[0,+50],
+		"radius":10,
+		"color":"white",
+		"borderColor":"black",
+		"borderWidth":1
+	};
+}
